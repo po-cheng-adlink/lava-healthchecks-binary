@@ -14,3 +14,4 @@ sed -i "s,https://github.com/montjoie/lava-healthchecks-binary/blob/master,http:
 ```
 * Run docker build . -t lava-healthchecks-binary-www
 * Run docker run -p 8080:80 lava-healthchecks-binary-www
+
