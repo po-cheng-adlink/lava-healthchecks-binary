@@ -12,10 +12,10 @@ services:
         root_path: "/wwwroot"
         extra_packages: ""
     restart: always
-    ports:
-      - "8888:80"    # http
-      - "2121:21"    # ftp
+    #    ports:
+    #      - "80:80"    # http
+    #      - "21:21"    # ftp
     volumes:
-      - "/home/po/workspace/lava-lab/lava-healthchecks-binary/mainline:/wwwroot/healthcheck/mainline/"
-      - "/home/po/workspace/lava-lab/lava-healthchecks-binary/images:/wwwroot/healthcheck/images/"
+      - "/home/po/workspace/lava-lab/ci-box-fileserver/overlay/mainline:/wwwroot/healthcheck/mainline/"
+      - "/home/po/workspace/lava-lab/ci-box-fileserver/overlay/images:/wwwroot/healthcheck/images/"
 
