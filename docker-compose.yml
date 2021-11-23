@@ -16,6 +16,8 @@ services:
     #      - "80:80"    # http
     #      - "21:21"    # ftp
     volumes:
-      - "/home/po/workspace/lava-lab/ci-box-fileserver/overlay/mainline:/wwwroot/healthcheck/mainline/"
-      - "/home/po/workspace/lava-lab/ci-box-fileserver/overlay/images:/wwwroot/healthcheck/images/"
+      - "./mainline/:/wwwroot/healthcheck/mainline/"
+      - "./images/:/wwwroot/healthcheck/images/"
+      - "./next/:/wwwroot/healthcheck/next/"
+      - "./stable/:/wwwroot/healthcheck/stable/"
 
