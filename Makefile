@@ -1,9 +1,10 @@
 download:
-	git clone https://github.com/BayLibre/lava-healthchecks-binary.git || :
-	cp -r -p lava-healthchecks-binary/mainline mainline
-	cp -r -p lava-healthchecks-binary/images images
-	cp -r -p lava-healthchecks-binary/next next
-	cp -r -p lava-healthchecks-binary/stable stable
+	if [ -d lava-healthchecks-binary ]; then cd lava-healthchecks-binary; git pull; cd -; else git clone https://github.com/BayLibre/lava-healthchecks-binary.git; fi;
+	rm -fr mainline images next stable
+	cp -fr -p lava-healthchecks-binary/mainline mainline
+	cp -fr -p lava-healthchecks-binary/images images
+	cp -fr -p lava-healthchecks-binary/next next
+	cp -fr -p lava-healthchecks-binary/stable stable
 
 build: download
 	docker-compose build

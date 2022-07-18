@@ -20,4 +20,3 @@ services:
       - "./images/:/wwwroot/healthcheck/images/"
       - "./next/:/wwwroot/healthcheck/next/"
       - "./stable/:/wwwroot/healthcheck/stable/"
-
