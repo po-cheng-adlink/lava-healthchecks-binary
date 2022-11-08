@@ -31,6 +31,12 @@ chown root:nogroup -R ${ROOT}
 chmod -R a+rw ${ROOT}/
 chmod a-w ${ROOT}
 
+if [ -d ${ROOT}/lava-healthchecks-binary -a -z "$(ls -A ${ROOT}/lava-healthchecks-binary)" ]; then
+	echo "Cloning BayLibre lava-healthchecks-binary..."
+	git clone https://github.com/BayLibre/lava-healthchecks-binary.git ${ROOT}/lava-healthchecks-binary
+fi
+
+echo "Hosting lighttpd on port ${PORT_HTTP} and vsftpd on ${PORT_FTP}..."
 lighttpd -f /etc/lighttpd.conf &
 vsftpd /etc/vsftpd.conf
 

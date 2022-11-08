@@ -10,13 +10,10 @@ services:
         http_port: 80
         ftp_port: 21
         root_path: "/wwwroot"
-        extra_packages: ""
+        extra_packages: "git"
     restart: always
     #    ports:
     #      - "80:80"    # http
     #      - "21:21"    # ftp
     volumes:
-      - "./mainline/:/wwwroot/healthcheck/mainline/"
-      - "./images/:/wwwroot/healthcheck/images/"
-      - "./next/:/wwwroot/healthcheck/next/"
-      - "./stable/:/wwwroot/healthcheck/stable/"
+      - "./overlays/lava-healthchecks-binary:/wwwroot/lava-healthchecks-binary"

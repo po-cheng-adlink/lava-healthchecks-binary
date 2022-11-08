@@ -1,4 +1,4 @@
-FROM debian:stretch-backports
+FROM debian:bullseye-backports
 
 RUN apt -q update
 RUN DEBIAN_FRONTEND=noninteractive apt-get -q -y install \
