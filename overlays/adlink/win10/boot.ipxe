@@ -1,6 +1,13 @@
 #!ipxe
+set username jenkins
+set password password0000
+set initiator-iqn iqn.2023-03.lavalab.com:initdisk
+sanhook --drive 0x80 iscsi:172.30.70.49::::iqn.2023-03.lavalab.com:disk1
 kernel wimboot
-initrd boot/bcd         BCD
-initrd boot/boot.sdi    boot.sdi
-initrd sources/boot.wim boot.wim
+initrd boot/bcd             BCD
+initrd boot/boot.sdi        boot.sdi
+initrd sources/boot.wim     boot.wim
+initrd install.bat          install.bat
+initrd winpeshl.ini         winpeshl.ini
 boot
+
