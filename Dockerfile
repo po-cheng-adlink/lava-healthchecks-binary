@@ -1,4 +1,4 @@
-FROM debian:bullseye-backports
+FROM debian:bookworm-backports
 
 RUN apt -q update
 RUN DEBIAN_FRONTEND=noninteractive apt-get -q -y install \
